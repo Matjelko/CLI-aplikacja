@@ -3,9 +3,6 @@ const path = require('path')
 
 const contactsPath = path.join(__dirname, 'db', 'contacts.json')
 
-// console.log(path.basename(contactsPath))
-console.log(contactsPath)
-
 function listContacts() {
     fs.readFile(contactsPath, function(err, data) {
         if(err) {
