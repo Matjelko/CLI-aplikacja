@@ -1,1 +1,3 @@
-console.log("testing")
+const contacts = require("./contacts.js")
+
+contacts.listContacts()
