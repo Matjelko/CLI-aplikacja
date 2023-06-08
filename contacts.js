@@ -23,7 +23,7 @@ function getContactById(contactId) {
             console.log("error", err.message);
         } else {
             const contacts = JSON.parse(data);
-            const contact = contacts.find((contact) => contact.id === id);
+            const contact = contacts.find((contact) => contact.id === contactId);
             console.log(contact);  
         }
     })
@@ -35,13 +35,13 @@ function removeContact(contactId) {
             console.log("error", err.message);
         } else {
             const contacts = JSON.parse(data);
-            const updatedContacts = contacts.filter((contact) => contact.id !== id);
+            const updatedContacts = contacts.filter((contact) => contact.id !== contactId);
 
             fs.writeFile(contactsPath, JSON.stringify(updatedContacts), function(err) {
                 if(err) {
                     console.log("error", err.message)
                 } else {
-                    console.log(`Contacts with id ${id} has been removed.`)
+                    console.log(`Contacts with id ${contactId} has been removed.`)
                 }
             })
         }
